@@ -1,3 +1,32 @@
-<nav class="">
+---
+import HeaderLink from "./HeaderLink.astro";
+const links = [
+    {
+        title:'About',
+        href:'/about'
+    },
+    {
+        title:'Blog',
+        href:'/blog'
+    }
+]
+
+---
+
+<nav class="flex justify-between h-20 items-center">
+    <HeaderLink href='/'>
+        KeyStatic Blog
+    </HeaderLink>
+    <ul class="flex gap-3">
+        {
+            links.map((link)=>(
+                <HeaderLink href={link.href}>
+                    {
+                    link.title
+                    }
+                </HeaderLink>
+            ))
+        }
+    </ul>
 
 </nav>

@@ -1,0 +1,17 @@
+---
+import Date from "../Date.astro";
+const {post,index} = Astro.props
+const leftOrder = index%2 === 0 ? 'order-1' : 'order-2'
+const rightOrder = index%2 === 0 ? 'order-2' : 'order-1'
+
+---
+
+<article class="w-full flex ">
+    <div class:list={['w-1/2', leftOrder]}>
+        <img src={post.data.avatar} alt="">
+    </div>
+    <div class:list={['w-1/2','p-10', rightOrder]}>
+        <h2 class="text-2xl ">{post.data.title}</h2>
+        <Date date={post.data.date}/>
+    </div>
+</article>
